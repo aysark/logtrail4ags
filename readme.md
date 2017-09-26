@@ -23,12 +23,12 @@ From: https://github.com/sivasamyk/logtrail
 
 ## Get Started
 ### Install Dependencies
-You will need to choose a host machine which will be where you view all the logs.  Then go ahead and install the elastic stack stack on the host machine:
-1. install elasticsearch: https://www.elastic.co/guide/en/elasticsearch/reference/5.6/install-elasticsearch.html
-2. install kibana: https://www.elastic.co/guide/en/kibana/5.6/install.html
-3. install logstash: https://www.elastic.co/guide/en/logstash/5.6/installing-logstash.html
-4. install filebeat: https://www.elastic.co/guide/en/beats/filebeat/5.6/filebeat-installation.html
-5. install logtrail plugin for kibana: `./bin/kibana-plugin install https://github.com/sivasamyk/logtrail/releases/download/v0.1.21/logtrail-5.6.1-0.1.21.zip`
+You will need to choose a host machine which will be where you view all the logs.  Then go ahead and install the elastic stack stack on the host machine:  
+1. install elasticsearch: https://www.elastic.co/guide/en/elasticsearch/reference/5.6/install-elasticsearch.html  
+2. install kibana: https://www.elastic.co/guide/en/kibana/5.6/install.html  
+3. install logstash: https://www.elastic.co/guide/en/logstash/5.6/installing-logstash.html  
+4. install filebeat: https://www.elastic.co/guide/en/beats/filebeat/5.6/filebeat-installation.html  
+5. install logtrail plugin for kibana: `./bin/kibana-plugin install   https://github.com/sivasamyk/logtrail/releases/download/v0.1.21/logtrail-5.6.1-0.1.21.zip`  
 
 ### Configure for ArcGIS Logging
 Add this repo's filebeat.yml to your filebeat install dir.  Run filebeat:  
