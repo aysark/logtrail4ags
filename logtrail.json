@@ -1,37 +1,37 @@
 {
-index_patterns: [
-{
-es: {
-default_index: "logstash-*",
-allow_url_parameter: false
-},
-tail_interval_in_seconds: 10,
-es_index_time_offset_in_seconds: 0,
-display_timezone: "local",
-display_timestamp_format: "MMM DD HH:mm:ss",
-max_buckets: 500,
-default_time_range_in_days: 1,
-max_hosts: 100,
-max_events_to_keep_in_viewer: 500,
-fields: {
-mapping: {
-timestamp: "@timestamp",
-display_timestamp: "@timestamp",
-hostname: "host",
-program: "fields.type",
-message: "message"
-},
-message_format: "{{{message}}}"
-},
-color_mapping: {
-field: "level",
-mapping: {
-ERROR: "#CC3300",
-WARNING: "#FF9966",
-INFO: "#B5E7A0",
-DEBUG: "#CFE0E8"
-}
-}
-}
-]
+  "index_patterns" : [
+    {
+      "es": {
+        "default_index": "logstash-*",
+        "allow_url_parameter": false
+      },
+      "tail_interval_in_seconds": 10,
+      "es_index_time_offset_in_seconds": 0,
+      "display_timezone": "local",
+      "display_timestamp_format": "MMM DD HH:mm:ss",
+      "max_buckets": 500,
+      "default_time_range_in_days" : 1,
+      "max_hosts": 100,
+      "max_events_to_keep_in_viewer": 500,
+      "fields" : {
+        "mapping" : {
+            "timestamp" : "@timestamp",
+            "display_timestamp" : "@timestamp",
+            "hostname" : "host",
+            "program": "fields.type",
+            "message": "message"
+        },
+        "message_format": "{{{message}}}"
+      },
+      "color_mapping" : {
+        "field": "level",
+        "mapping": {
+          "ERROR": "#CC3300",
+          "WARNING": "#FF9966",
+          "INFO": "#B5E7A0",
+          "DEBUG": "#CFE0E8"
+        }
+      }
+    }
+  ]
 }
