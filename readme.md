@@ -1,6 +1,13 @@
 # LogTrail4AGS: Better ArcGIS Logs
- Use the Elastic Stack (previously ELK) to improve ArcGIS stack log visibility and monitoring.  Quickly and efficiently view logs spanning many machines by using the speed of elastic, the querying power of lucene and the beauty of kibana.
+ Use the Elastic Stack (previously ELK) to improve ArcGIS stack log visibility and monitoring.  Quickly and efficiently view logs spanning many machines by using the speed of elastic, the querying power of lucene and the beauty of kibana.  
+ 
 ![preview](preview.png)
+
+The added customizations in this repo use default locations of logs and provide: 
+- log level coloring and easy filtering by level using: `level:{error|warning|info|debug}`
+- product filtering using: `fields.type:{portal|server}`
+- machine filtering using: `host:dev004149`
+- automatic log date transforms so that elastic displays the currect datetime of the log
 
 ## Features
 - View, analyze and search log events from a centralized interface
@@ -23,7 +30,7 @@ From: https://github.com/sivasamyk/logtrail
 
 ## Get Started
 ### Install Dependencies
-You will need to choose a host machine which will be where you view all the logs.  Then go ahead and install the elastic stack stack on the host machine:  
+You will need to choose a host machine which will be where you view all the logs.  Then go ahead and install the elastic stack on the host machine:  
 1. install elasticsearch: https://www.elastic.co/guide/en/elasticsearch/reference/5.6/install-elasticsearch.html  
 2. install kibana: https://www.elastic.co/guide/en/kibana/5.6/install.html  
 3. install logstash: https://www.elastic.co/guide/en/logstash/5.6/installing-logstash.html  
@@ -37,7 +44,7 @@ Add this repo's filebeat.yml to your filebeat install dir.  Run filebeat:
 Add this repo's logstash-arcgis-pipeline.conf to your logstash install dir. Run logstash:  
 `bin\logstash -f logstash-arcgis-pipeline.conf --config.reload.automatic`
 
-Run kibana:  
+Add this repo's logtrail.json to `kibana\plugins\logtrail`.  Run kibana:  
 `bin\kibana.bat`
 
 Open kibana & navigate to logtrail from left nav menu:   
