@@ -53,6 +53,10 @@ Open kibana & navigate to logtrail from left nav menu:
 #### Add Logs From Other Machines
 You can easily add other machines' logs by simply insalling filebeat on that machine and running the above filebeat configuration but be sure to change the line for the log output (in filebeat.yml) to be to your host machine, so it would be something like: `hosts: ["akhalid.esri.com:5044"]`.  Now your new machine will send logs to your host machine's logstash.
 
+#### Deploying docker filebeat
+Simply run:  
+`docker-compose -f docker-compose-filebeat.yml up -d`
+
 ## Clean up
 If you want to cleanup filebeat logs, run:
 `rm data\registry data\registry.old`
